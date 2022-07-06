@@ -2,8 +2,10 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import credentials.CredentialsConfig;
 import helpers.Attachments;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,7 +24,19 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.browserPosition = "00x00";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+
+        String remoteBrowser = System.getProperty("remote", "demoqa.com");
+        String browserOption = System.getProperty("browser", "Opera");
+        Configuration.browser = browserOption;
+        String browserResolution = System.getProperty("resolution", "1920×1080");
+        Configuration.browserSize = browserResolution;
+        String browserVersion = System.getProperty("version", "99");
+        Configuration.browserVersion = browserVersion;
+
+        CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
+        Configuration.remote = "https://" + credentialsConfig.login() + ":" + credentialsConfig.password() + "@" + remoteBrowser;
+
     }
 
 

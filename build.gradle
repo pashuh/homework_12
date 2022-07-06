@@ -7,6 +7,13 @@ repositories {
     mavenCentral()
 }
 
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
 def allureVersion = "2.18.1",
     selenideVersion = "6.6.4",
     junitVersion = "5.8.2",
@@ -31,6 +38,7 @@ dependencies {
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.aeonbits.owner:owner:1.0.12",
             "org.slf4j:slf4j-simple:$slf4jVersion"
     )
 }
@@ -43,5 +51,11 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+task testOne(type: Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform{
+        includeTags "tests practice form"
     }
 }
