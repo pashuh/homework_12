@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.steps.StepsForDemoQa;
 
-@Tag("tests practice form")
+
 public class TestDemoQa extends TestBase {
 
     @Test
+    @Tag("tests_practice_form")
     @DisplayName("Проверка заполнения формы automation-practice-form")
     void practiceForm() {
         StepsForDemoQa steps = new StepsForDemoQa();

@@ -56,6 +56,6 @@ tasks.withType(Test) {
 task testOne(type: Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform{
-        includeTags "tests practice form"
+        includeTags "tests_practice_form"
     }
 }
