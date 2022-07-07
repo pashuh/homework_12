@@ -1,16 +1,15 @@
 package tests;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.steps.StepsForDemoQa;
+
 
 
 public class TestDemoQa extends TestBase {
 
     @Test
     @Tag("tests")
-    @DisplayName("Проверка заполнения формы automation-practice-form")
     void practiceForm() {
         StepsForDemoQa steps = new StepsForDemoQa();
 

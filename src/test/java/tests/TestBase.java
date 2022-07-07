@@ -28,10 +28,10 @@ public class TestBase {
         Configuration.browserSize = browserResolution;
         String browserVersion = System.getProperty("version", "100");
         Configuration.browserVersion = browserVersion;
-        String remoteBrowser = System.getProperty("remote", "demoqa.com");
+        String remoteBrowser = System.getProperty("remote", "selenoid.autotests.cloud/wd/hub");
         CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
         Configuration.remote = "https://" + credentialsConfig.login() + ":" + credentialsConfig.password() + "@" + remoteBrowser;
-        String browserOption = System.getProperty("browser", "Opera");
+        String browserOption = System.getProperty("browser", "chrome");
         Configuration.browser = browserOption;
     }
 

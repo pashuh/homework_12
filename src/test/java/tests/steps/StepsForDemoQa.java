@@ -3,11 +3,13 @@ package tests.steps;
 import com.codeborne.selenide.SelenideElement;
 import components.CalenderComponent;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Tag;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+@Tag("needless")
 public class StepsForDemoQa {
     CalenderComponent calenderComponent = new CalenderComponent();
 
