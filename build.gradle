@@ -56,6 +56,6 @@ task testOne(type: Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform{
         includeTags "tests"
-        excludeTags "needless"
+        excludeTags "notrun"
     }
 }

@@ -24,7 +24,7 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
 
-        String browserResolution = System.getProperty("resolution", "1920×1080");
+        String browserResolution = System.getProperty("resolution", "1920x1080");
         Configuration.browserSize = browserResolution;
         String browserVersion = System.getProperty("version", "100");
         Configuration.browserVersion = browserVersion;

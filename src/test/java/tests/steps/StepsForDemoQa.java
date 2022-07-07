@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-@Tag("needless")
+@Tag("notrun")
 public class StepsForDemoQa {
     CalenderComponent calenderComponent = new CalenderComponent();
 
