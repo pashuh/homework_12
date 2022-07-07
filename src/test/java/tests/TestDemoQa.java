@@ -9,7 +9,7 @@ import tests.steps.StepsForDemoQa;
 public class TestDemoQa extends TestBase {
 
     @Test
-    @Tag("tests_practice_form")
+    @Tag("tests")
     @DisplayName("Проверка заполнения формы automation-practice-form")
     void practiceForm() {
         StepsForDemoQa steps = new StepsForDemoQa();

@@ -23,22 +23,17 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.browserPosition = "00x00";
 
-
-        String remoteBrowser = System.getProperty("remote", "demoqa.com");
-        String browserOption = System.getProperty("browser", "Opera");
-        Configuration.browser = browserOption;
         String browserResolution = System.getProperty("resolution", "1920×1080");
         Configuration.browserSize = browserResolution;
-        String browserVersion = System.getProperty("version", "99");
+        String browserVersion = System.getProperty("version", "100");
         Configuration.browserVersion = browserVersion;
-
+        String remoteBrowser = System.getProperty("remote", "demoqa.com");
         CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
         Configuration.remote = "https://" + credentialsConfig.login() + ":" + credentialsConfig.password() + "@" + remoteBrowser;
-
+        String browserOption = System.getProperty("browser", "Opera");
+        Configuration.browser = browserOption;
     }
-
 
     @AfterEach
     void afterEach() {
